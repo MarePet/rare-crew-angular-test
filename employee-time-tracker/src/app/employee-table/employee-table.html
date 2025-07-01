@@ -1,0 +1,46 @@
+<div class="employee-table-container">
+  <h2 class="employee-table-title">Employee Time Worked</h2>
+
+  <div *ngIf="loading" class="employee-table-loading">
+    <span>Loading...</span>
+  </div>
+  <div *ngIf="error" class="employee-table-error">
+    <span>{{ error }}</span>
+  </div>
+  <div *ngIf="!loading && !error && employees.length === 0" class="employee-table-empty">
+    <span>No employee data available.</span>
+  </div>
+
+  <div *ngIf="!loading && !error && employees.length > 0" class="employee-table-scroll">
+    <table class="employee-table">
+      <thead class="employee-table-header">
+        <tr>
+          <th>#</th>
+          <th>Employee Name</th>
+          <th>Total Hours Worked</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees; let i = index" [class.employee-table-row-low]="isLowHours(emp.totalHours)">
+          <td>{{ i + 1 }}</td>
+          <td class="employee-table-name">{{ emp.employeeName }}</td>
+          <td>{{ emp.totalHours }}</td>
+          <td><a href="#" class="employee-table-edit">Edit</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="!loading && !error && employees.length > 0 && isBrowser" class="employee-pie-section">
+    <h3 class="employee-pie-title">Time Worked Distribution</h3>
+    <div class="employee-pie-chart-wrapper">
+      <canvas baseChart
+        [data]="pieChartData"
+        [type]="pieChartType"
+        [legend]="true"
+        [options]="pieChartOptions">
+      </canvas>
+    </div>
+  </div>
+</div>

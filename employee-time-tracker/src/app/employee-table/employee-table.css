@@ -1,0 +1,135 @@
+/* Highlight low hours row */
+.bg-red-100 {
+  background-color: #fee2e2;
+}
+
+/* Responsive table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+}
+th {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+/* Chart container */
+.max-w-md {
+  max-width: 28rem;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Container and title */
+.employee-table-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(30, 41, 59, 0.08);
+}
+.employee-table-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+  text-align: center;
+}
+
+/* Table styles */
+.employee-table-scroll {
+  overflow-x: auto;
+}
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(30, 41, 59, 0.04);
+}
+.employee-table-header th {
+  background: #f3f4f6;
+  color: #334155;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+.employee-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #334155;
+}
+.employee-table-row-low {
+  background: #fee2e2;
+}
+.employee-table-name {
+  font-weight: 500;
+}
+
+/* Loading, error, empty states */
+.employee-table-loading,
+.employee-table-error,
+.employee-table-empty {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.1rem;
+  color: #64748b;
+}
+.employee-table-error {
+  color: #ef4444;
+}
+
+/* Pie chart section */
+.employee-pie-section {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+.employee-pie-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+.employee-pie-chart-wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  /* background: #f8fafc; */
+  border-radius: 1rem;
+  /* box-shadow: 0 2px 8px rgba(30, 41, 59, 0.04); */
+  padding: 1.5rem 1rem;
+}
+
+@media (max-width: 600px) {
+  .employee-table-container {
+    padding: 1rem 0.25rem;
+  }
+  .employee-table-title {
+    font-size: 1.25rem;
+  }
+  .employee-pie-chart-wrapper {
+    padding: 1rem 0.25rem;
+  }
+}
+
+.employee-table-edit {
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.employee-table-edit:hover {
+  color: #1e40af;
+}
+.employee-table td:last-child, .employee-table th:last-child {
+  text-align: center;
+}
